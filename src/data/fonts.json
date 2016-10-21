@@ -1,0 +1,26 @@
+[
+	{
+		"family": "'Oswald', sans-serif",
+		"url": "https://fonts.googleapis.com/css?family=Oswald:400,700"
+	},
+	{
+		"family": "'Amatic SC',cursive",
+		"url": "https://fonts.googleapis.com/css?family=Amatic+SC:400,700"
+	},
+	{
+		"family": "'Slabo 27px', serif",
+		"url": "https://fonts.googleapis.com/css?family=Slabo+27px"
+	},
+	{
+		"family": "'Josefin Slab', serif",
+		"url": "https://fonts.googleapis.com/css?family=Josefin+Slab:400,700"
+	},
+	{
+		"family": "'Kreon', serif",
+		"url": "https://fonts.googleapis.com/css?family=Kreon:400,700"
+	},
+	{
+		"family": "'Croissant One', cursive",
+		"url": "https://fonts.googleapis.com/css?family=Croissant+One"
+	}
+]

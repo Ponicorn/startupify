@@ -4,6 +4,9 @@ A generator for the most important part of any successful startupt in 2016 : Hom
 
 Its build with [Vue.js](https://vuejs.org/), and the nice pictures come from [Unsplash](https://unsplash.com/).
 
+ps: Since it use rocket science css property like "background-clip: text;", IE & Firefox will totally fuck it up in some rendering.
+And nothing is plan to support it for the moment.
+
 ## I HAVE STUPID IDEA I WANT TO ADD
 
 Fork, Dev, Pull Request.

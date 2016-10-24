@@ -17,7 +17,7 @@ export default {
 			year : data.year(),
 		}
 	},
-	name: 'content1'
+	name: 'activitySince'
 }
 </script>
 

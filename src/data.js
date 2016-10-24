@@ -2,6 +2,7 @@ import fonts from './data/fonts.json'
 import cities from './data/cities.json'
 import activities from './data/activities.json'
 import adjectives from './data/adjectives.json'
+import subjects from './data/subjects.json'
 
 /**
  * Return id or random cell from table
@@ -11,7 +12,7 @@ import adjectives from './data/adjectives.json'
  */
 const randomFromTable = (table,id) => {
 	// If we have an id, we return the good table cell
-	if (id && table[id]) {
+	if (typeof id !== 'undefined' && table[id]) {
 		return fonts[id];
 	}
 
@@ -29,12 +30,12 @@ export default {
 	 */
 	font (id) {
 		// Fetch Font
-		const font = randomFromTable (fonts, id);
+		const fontres = randomFromTable (fonts, id);
 
 		// Put it crappy-style in #badPractice
 		document.querySelector('#badPractice').innerHTML =
-		`@import url('${font.url}'); .fontOfTheDay { font-family: ${font.family};}`;
-		return font;
+		`@import url('${fontres.url}'); .fontOfTheDay { font-family: ${fontres.family};}`;
+		return fontres;
 	},
 
 	/**
@@ -57,6 +58,13 @@ export default {
  	 * @return {String} activity name
  	 */
  	 adjective (id) { return randomFromTable(adjectives, id); },
+
+	 /**
+	 * Return random or choosen subject
+	 * @param {integer} [id] - Target subject
+	 * @return {String} subject name
+	 */
+	 subject (id) { return randomFromTable(subjects, id); },
 
 	 /**
 	  * Return random year, between X date and now

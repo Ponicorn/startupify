@@ -1,19 +1,23 @@
 <template>
     <div class="app">
-        <vue1></vue1>
+        <rngComponent></rngComponent>
     </div>
 </template>
 
 <script>
-import vue1 from './components/Vue_1.vue'
-import data from './data.js'
+import bgFilter from './components/BgFilter.vue'
+import textImage from './components/TextImage.vue'
 
-data.font();
+// R-R-R-Randomize !
+const componentList = [bgFilter,textImage];
+const rngComponent = componentList[Math.floor(Math.random() * componentList.length)];
 
 export default {
     name: 'app',
     components: {
-        vue1
+        rngComponent
+        // bgFilter,
+        // textImage
     }
 }
 </script>
@@ -24,7 +28,10 @@ export default {
 html,
 body,
 .app {
+    overflow: hidden;
     height: 100%;
     width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
-    <div class="vue1">
+    <div class="bgFilter">
         <div class="stupidHipsterFilter"></div>
         <div class="contentRow">
             <div class="stupidHipsterFilter"></div>
             <div class="contentWrap">
-                <content1 class="content stupidHipsterFilter fontOfTheDay"></content1>
+                <activitySince class="content stupidHipsterFilter fontOfTheDay"></activitySince>
             </div>
             <div class="stupidHipsterFilter"></div>
         </div>
@@ -13,18 +13,20 @@
 </template>
 
 <script>
-import content1 from './Content_1.vue'
+import activitySince from './ActivitySince.vue'
+import data from '../data.js'
+data.font();
 
 export default {
-    name: 'vue1',
+    name: 'bgFilter',
     components: {
-        content1
+        activitySince
     }
 }
 </script>
 
 <style scoped lang="scss">
-.vue1 {
+.bgFilter {
     height: 100%;
     width: 100%;
     display: flex;

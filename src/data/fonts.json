@@ -1,11 +1,15 @@
 [
 	{
 		"family": "'Oswald', sans-serif",
-		"url": "https://fonts.googleapis.com/css?family=Oswald:400,700"
+		"url": "https://fonts.googleapis.com/css?family=Oswald:400,700",
+		"superbold": true,
+		"acceptable": true
 	},
 	{
 		"family": "'Amatic SC',cursive",
-		"url": "https://fonts.googleapis.com/css?family=Amatic+SC:400,700"
+		"url": "https://fonts.googleapis.com/css?family=Amatic+SC:400,700",
+		"superbold":false,
+		"acceptable": true
 	},
 	{
 		"family": "'Slabo 27px', serif",
@@ -13,14 +17,26 @@
 	},
 	{
 		"family": "'Josefin Slab', serif",
-		"url": "https://fonts.googleapis.com/css?family=Josefin+Slab:400,700"
+		"url": "https://fonts.googleapis.com/css?family=Josefin+Slab:400,700",
+		"superbold":false,
+		"acceptable": true
 	},
 	{
 		"family": "'Kreon', serif",
-		"url": "https://fonts.googleapis.com/css?family=Kreon:400,700"
+		"url": "https://fonts.googleapis.com/css?family=Kreon:400,700",
+		"superbold":false,
+		"acceptable": true
 	},
 	{
 		"family": "'Croissant One', cursive",
-		"url": "https://fonts.googleapis.com/css?family=Croissant+One"
+		"url": "https://fonts.googleapis.com/css?family=Croissant+One",
+		"superbold": true,
+		"acceptable": true
+	},
+	{
+		"family": "'Passion One', cursive",
+		"url": "https://fonts.googleapis.com/css?family=Passion+One:500,700",
+		"superbold": true,
+		"acceptable": false
 	}
 ]

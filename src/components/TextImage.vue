@@ -29,7 +29,7 @@ export default {
 	justify-content: center;
 	align-items: center;
 
-    background-image: url(https://source.unsplash.com/random?space);
+    background-image: url(https://source.unsplash.com/random);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -53,7 +53,7 @@ export default {
         }
 
         .content {
-            background-image: url(https://source.unsplash.com/random?space);
+            background-image: url(https://source.unsplash.com/random);
             background-attachment: fixed;
             padding: 1em;
             text-align: center;
@@ -64,7 +64,7 @@ export default {
             background-size: cover;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
-            filter: drop-shadow(1px 1px 2px #6C7A89);
+            filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.22));
         }
 
     }

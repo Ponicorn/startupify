@@ -3,6 +3,7 @@ import cities from './data/cities.json'
 import activities from './data/activities.json'
 import adjectives from './data/adjectives.json'
 import subjects from './data/subjects.json'
+import bobRossQuotes from './data/BobRossQuotes.json'
 
 /**
  * Return id or random cell from table
@@ -65,6 +66,13 @@ export default {
 	 * @return {String} subject name
 	 */
 	 subject (id) { return randomFromTable(subjects, id); },
+
+	 /**
+	 * Return random or choosen subject
+	 * @param {integer} [id] - Target subject
+	 * @return {String} subject name
+	 */
+	 bobRossQuote (id) { return randomFromTable(bobRossQuotes, id); },	 
 
 	 /**
 	  * Return random year, between X date and now

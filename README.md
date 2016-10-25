@@ -27,3 +27,9 @@ echo "I'm happy."
  - A menu to choose things
  - Shareable page (with param and all)
  - A chicken oriented theme
+
+
+## ATM WE HAVE....
+ - A classic view with dark filter on the background
+ - A view with transparent text only working on -webkit- browser
+ - A bob ross quote view

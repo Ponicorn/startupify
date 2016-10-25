@@ -53,7 +53,11 @@ export default {
         .contentWrap {
             max-width: 100%;
             padding: 10px;
+            display: flex;
+            flex-direction: column;
+
             .content {
+                flex-grow: 1;
                 box-sizing: border-box;
                 padding: 10px;
                 width: 100%;

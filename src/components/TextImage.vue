@@ -38,7 +38,7 @@ export default {
     background-size: cover;
     padding: 20px;
     .contentWrap {
-        background: #ECECEC;
+        background: rgba(236, 236, 236, 0.8);
         display: flex;
         justify-content: center;
     	align-items: center;
@@ -55,16 +55,15 @@ export default {
         .content {
             background-image: url(https://source.unsplash.com/random);
             background-attachment: fixed;
-            padding: 1em;
+            padding: 5rem;
             text-align: center;
             background-position: center;
             background-repeat: no-repeat;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             background-size: cover;
-            -webkit-text-fill-color: transparent;
+            -webkit-text-fill-color: rgba(0,0,0,0.60);
             -webkit-background-clip: text;
-            filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.22));
         }
 
     }

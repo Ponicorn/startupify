@@ -1,7 +1,7 @@
 <template>
     <div class="bobRoss fontOfTheDay">
         <div class="blocquote">
-            <div class="quote">{{quote}} </div>
+            <div class="quote">&#8220; {{quote}} &#8222;</div>
             <div class="cite">Bob Ross</div>
         </div>
     </div>
@@ -43,19 +43,6 @@ export default {
         padding: 20px;
         .quote {
             margin-bottom: 20px;
-            margin-left: 20px;
-            margin-right: 20px;
-            position: relative;
-            &:before {
-                // content: '&#8220';
-                content: '\201C';
-                position: absolute;
-                left: -20px;
-                top: 0;
-            }
-            &:after {
-                content: '\201E';
-            }
         }
         .cite {
             text-align: right;

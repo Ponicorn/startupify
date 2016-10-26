@@ -1,15 +1,21 @@
 <template>
 	<div id="menu" class="menu">
 		<div class="ListHolder">
-			<a href="?style=bobross" class="item"><img src="img/bobross.gif" alt="bob ross" /></a>
-			<a href="?style=bgfilter" class="item"><div class="miniBgFilter"><div>bla bla</div></div></a>
-
+			<div v-on:click="navigateLikeAPirate('bobross')" class="item"><img src="img/bobross.gif" alt="bob ross" /></div>
+			<div v-on:click="navigateLikeAPirate('bgfilter')" class="item"><div class="miniBgFilter"><div>bla bla</div></div></div>
+			<div v-on:click="navigateLikeAPirate('/')" class="item"><div class="rngDeFolie fontOfTheDay">?</div></div>
 		</div>
 	</div>
 </template>
 
 <script>
 export default {
+	methods: {
+		navigateLikeAPirate : function (where) {
+            this.$router.push(where);
+			location.reload();
+        }
+	}
 }
 </script>
 
@@ -65,6 +71,17 @@ export default {
 					justify-content: center;
 					font-size: 8px
 				}
+			}
+			.rngDeFolie {
+				font-weight: bold;
+				font-size: 2rem;
+				color: #2c2c2c;
+				height: 100%;
+				width: 100%;
+				border: solid 10px #2c2c2c;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 			}
 		}
 	}

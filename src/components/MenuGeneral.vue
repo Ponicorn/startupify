@@ -1,8 +1,8 @@
 <template>
 	<div id="menu" class="menu">
 		<div class="ListHolder">
-			<a href="/?style=bobross" class="item"><img src="img/bobross.gif" alt="bob ross" /></a>
-			<a href="/?style=bgfilter" class="item"><div class="miniBgFilter"><div>bla bla</div></div></a>
+			<a href="?style=bobross" class="item"><img src="img/bobross.gif" alt="bob ross" /></a>
+			<a href="?style=bgfilter" class="item"><div class="miniBgFilter"><div>bla bla</div></div></a>
 
 		</div>
 	</div>

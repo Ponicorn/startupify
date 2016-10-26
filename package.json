@@ -2,7 +2,7 @@
   "name": "swagmachine",
   "description": "A uber cool random swag homepage generator for any startup outta here",
   "author": "Ponicorn <tougrer@gmail.com>",
-  "private": true,
+  "private": false,
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
     "serve": "http-server -o -c 1 -a localhost",

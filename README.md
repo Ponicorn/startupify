@@ -24,7 +24,7 @@ echo "I'm happy."
 
 ## THINK IT MAY BE A GOOD IDEA TO DO
  - More creative view
- - A menu to choose things
+ - A menu to choose things (more options)
  - Shareable page (with param and all)
  - A chicken oriented theme
 

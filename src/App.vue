@@ -2,7 +2,12 @@
     <div class="app">
         <div id="rngComponentWrapper" class="rngComponentWrapper" :class="{ showMenu: showMenu }">
             <rngComponent></rngComponent>
-            <div class="smallCuteLittleButton" v-on:click="showMenu = !showMenu"><div></div></div>
+            <div class="smallCuteLittleButton" v-on:click="showMenu = !showMenu">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
         <menuGeneral></menuGeneral>
     </div>
@@ -79,15 +84,37 @@ body,
         width:  30px;
         z-index: 10;
         cursor: pointer;
-        background: #ECECEC;
+        background: #CCC;
+        border-radius: 1px;
         &>div {
+            border-radius: inherit;
             transition: 0.5s;
+            transition-timing-function: ease-in-out;
             position: absolute;
             left: 0;
             bottom: 0;
             background: #1f1f1f;
             height: 20px;
             width:  20px;
+            z-index: 14;
+            &:nth-child(2) {
+                background: #EC644B;
+                transition-delay: 0.1s;
+                transition-timing-function: ease-in-out;
+                z-index: 13;
+            }
+            &:nth-child(3) {
+                background: #BE90D4;
+                transition-delay: 0.2s;
+                transition-timing-function: ease-in-out;
+                z-index: 12;
+            }
+            &:nth-child(4) {
+                background: #81CFE0;
+                transition-delay: 0.3s;
+                transition-timing-function: ease-in-out;
+                z-index: 11;
+            }
         }
     }
 

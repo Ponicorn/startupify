@@ -1,35 +1,21 @@
-# Startupify
+# startupify
 
-A generator for the most important part of any successful startupt in 2016 : Homepage.
+> startupify your homepage
 
-Its build with [Vue.js](https://vuejs.org/), and the nice pictures come from [Unsplash](https://unsplash.com/).
+## Build Setup
 
-ps: Since it use rocket science css property like "background-clip: text;", IE & Firefox will totally fuck it up in some rendering.
-And nothing is plan to support it for the moment.
+``` bash
+# install dependencies
+npm install
 
-## I HAVE STUPID IDEA I WANT TO ADD
-
-Fork, Dev, Pull Request.
-
-```bash
-# Magically run dev build with hotreload
+# serve with hot reload at localhost:8080
 npm run dev
 
-# Build it
+# build for production with minification
 npm run build
 
-# Make the terminal happy
-echo "I'm happy."
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-## THINK IT MAY BE A GOOD IDEA TO DO
- - More creative view
- - A menu to choose things (more options)
- - Shareable page (with param and all)
- - A chicken oriented theme
-
-
-## ATM WE HAVE....
- - A classic view with dark filter on the background
- - A view with transparent text only working on -webkit- browser
- - A bob ross quote view
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

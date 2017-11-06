@@ -1,173 +1,100 @@
 <template>
-    <div class="app">
-        <div id="rngComponentWrapper" class="rngComponentWrapper" :class="{ showMenu: showMenu }">
-            <router-view></router-view>
-        </div>
-        <div class="smallCuteLittleButton" v-on:click="showMenu = !showMenu" :class="{ showMenu: showMenu }">
-            <div></div><div></div><div></div><div></div>
-        </div>
-        <div class="pleaseHitMe" v-on:click="navigateLikeAPirate('/')">
-            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
-                <path d="M0 0h24v24H0z" fill="none"/>
-            </svg>
-        </div>
-        <menuGeneral></menuGeneral>
+  <div id="app" v-on:click.stop="showMenu = !showMenu">
+    <!-- This is where the menu go -->
+
+    <!-- Swaggy-swag menu-button -->
+    <div class="menu" v-on:click.stop="showMenu = !showMenu">
+      <div class="cubainer" v-bind:class="{ show : showMenu }">
+        <div class="cube0"></div>
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+        <div class="cube3"></div>
+      </div>
     </div>
+
+    <!-- This is where the content go -->
+    <div class="content" v-bind:class="{ show: showMenu }" v-on:click.stop>
+      <router-view/>
+    </div>
+  </div>
 </template>
 
 <script>
-import menuGeneral from './components/MenuGeneral.vue'
-
 export default {
-    name: 'app',
-    data() {
-        return  {
-            showMenu : false
-        }
-    },
-    methods: {
-        navigateLikeAPirate () {
-            location.reload();
-        }
-    },
-    components: {
-        menuGeneral
+  name: 'app',
+  data () {
+    return {
+      showMenu: false
     }
+  }
+
 }
 </script>
 
 <style lang="scss">
-@import 'reset.scss';
-
-html,
-body,
-.app,
-.rngComponentWrapper {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body, #app, .content {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #eeeeee;
 }
 
-.rngComponentWrapper {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: #ccc;
-    transition: 0.5s;
-    z-index: 10;
-    .smallCuteLittleButton {
-        position: fixed;
-        bottom: 25px;
-        left: 25px;
-        height: 30px;
-        width:  30px;
-        z-index: 10;
-        cursor: pointer;
-        background: #CCC;
-        border-radius: 1px;
-        &>div {
-            border-radius: inherit;
-            transition: 0.5s;
-            transition-timing-function: ease-in-out;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            background: #1f1f1f;
-            height: 20px;
-            width:  20px;
-            z-index: 14;
-            &:nth-child(2) {
-                background: #EC644B;
-                transition-delay: 0.1s;
-                transition-timing-function: ease-in-out;
-                z-index: 13;
-            }
-            &:nth-child(3) {
-                background: #BE90D4;
-                transition-delay: 0.2s;
-                transition-timing-function: ease-in-out;
-                z-index: 12;
-            }
-            &:nth-child(4) {
-                background: #81CFE0;
-                transition-delay: 0.3s;
-                transition-timing-function: ease-in-out;
-                z-index: 11;
-            }
-        }
-    }
+$menusize: 60px;
 
-    &.showMenu {
-        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-        bottom: 100px;
-        left  : 100px;
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
 
-        .smallCuteLittleButton>div {
-            bottom: 10px;
-            left: 10px;
-        }
-    }
+  &.show {
+    top: $menusize;
+    left: $menusize;
+  }
 }
 
-.pleaseHitMe,
-.smallCuteLittleButton {
-    position: fixed;
-    height: 30px;
-    width:  30px;
-    z-index: 10;
+.menu {
+  width: $menusize;
+  height: $menusize;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .cubainer {
+    position: relative; // So child can be absolute
     cursor: pointer;
+    height: 30px;
+    width: 30px;
     background: rgba(238, 238, 238, 0.6);
-    border-radius: 1px;
-}
 
-.smallCuteLittleButton {
-    bottom: 25px;
-    left: 25px;
     &>div {
-        border-radius: inherit;
-        transition: 0.5s;
-        transition-timing-function: ease-in-out;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background: #1f1f1f;
-        height: 20px;
-        width:  20px;
-        z-index: 14;
-        &:nth-child(2) {
-            background: #EC644B;
-            transition-delay: 0.1s;
-            transition-timing-function: ease-in-out;
-            z-index: 13;
-        }
-        &:nth-child(3) {
-            background: #BE90D4;
-            transition-delay: 0.2s;
-            transition-timing-function: ease-in-out;
-            z-index: 12;
-        }
-        &:nth-child(4) {
-            background: #81CFE0;
-            transition-delay: 0.3s;
-            transition-timing-function: ease-in-out;
-            z-index: 11;
-        }
+      position: absolute; left: 0; top: 0;
+      height: 20px;
+      width: 20px;
+      background: pink;
+      transition: 0.5s;
+      transition-timing-function: ease-in-out;
+      &.cube0 { z-index: 14; background: #1f1f1f; transition-delay: 0; }
+      &.cube1 { z-index: 13; background: #EC644B; transition-delay: 0.1s; }
+      &.cube2 { z-index: 12; background: #BE90D4; transition-delay: 0.2s; }
+      &.cube3 { z-index: 11; background: #81CFE0; transition-delay: 0.3s; }
     }
 
-    &.showMenu>div {
-        bottom: 10px;
-        left: 10px;
+    &.show>div {
+      top: 10px;
+      left: 10px;
     }
+  }
+
 }
 
-.pleaseHitMe {
-    bottom: 25px;
-    right: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 </style>

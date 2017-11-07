@@ -5,7 +5,7 @@
 
     <div class="">
       <div class="col"></div>
-      <div class="col text fontastique" v-on:click="again()">
+      <div class="col text fontastique">
         <p>{{ city }} {{ adjective }} {{ activity }}</p>
         <p class="subtitle">since {{ year }}</p>
       </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import data from '../data.js'
+import data from '@/data.js'
 import { EV } from '@/events'
 
 data.font()

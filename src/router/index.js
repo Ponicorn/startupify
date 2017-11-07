@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Basic from '@/components/Basic'
 import Arrow from '@/components/Arrow'
+import Ross from '@/components/Ross'
 import Rng from '@/components/Rng'
 
 Vue.use(Router)
@@ -17,6 +18,11 @@ export default new Router({
       path: '/basic',
       name: 'Basic',
       component: Basic
+    },
+    {
+      path: '/ross',
+      name: 'Ross',
+      component: Ross
     },
     {
       path: '/arrow',

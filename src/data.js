@@ -2,9 +2,12 @@ import cities from './data/cities.json'
 import activities from './data/activities.json'
 import adjectives from './data/adjectives.json'
 import fonts from './data/fonts.json'
+import bobRossQuotes from './data/bobRossQuotes.json'
 
 const preloadDiv = document.getElementById('bgpreload')
+const rossDiv = document.getElementById('bgrosspreload')
 let imageUrl = ''
+let rossurl = ''
 
 /**
  * Retourne une entré au hasard d'un tableau
@@ -47,22 +50,34 @@ function font (id) {
  * et on retourne l'url de l'image dans le preload actuel
  * Noïce :^)
  */
-function background (sel) {
+function background () {
   let timestamp = new Date().getTime()
-  let bgimg = `url(https://source.unsplash.com/random?sig=${timestamp}${sel})`
+  let bgimg = `url(https://source.unsplash.com/random?sig=${timestamp})`
   preloadDiv.style['background-image'] = bgimg
   let res = { 'background-image': imageUrl }
   imageUrl = bgimg
   return res
 }
 
+function bgross () {
+  let timestamp = new Date().getTime()
+  let bgimg = `url(https://source.unsplash.com/random?$mountains&sig=${timestamp})`
+  rossDiv.style['background-image'] = bgimg
+  let res = { 'background-image': rossurl || bgimg }
+  rossurl = bgimg
+  return res
+}
+
 background()
+bgross()
 
 export default {
   city: () => randomFromTable(cities),
   activity: () => randomFromTable(activities),
   adjective: () => randomFromTable(adjectives),
+  bobRossQuote: () => randomFromTable(bobRossQuotes),
   year,
   font,
-  background
+  background,
+  bgross
 }

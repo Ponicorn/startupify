@@ -12,6 +12,9 @@
     <div v-on:click.stop class="options">
       <div class="option basic" v-on:click.stop="navigate('basic')"><div>basic</div></div>
       <div class="option arrow" v-on:click.stop="navigate('arrow')">X</div>
+      <div class="option ross" v-on:click.stop="navigate('ross')">
+        <img src="../assets/bobross.gif" alt="it's Bob Ross himself !">
+      </div>
       <div class="option rng" v-on:click.stop="navigate('rng')">RNG</div>
     </div>
 
@@ -169,6 +172,14 @@ $menusize: 80px;
         font-size: 1.2em;
         border: 2px solid #22313F;
         box-sizing: border-box;
+      }
+
+      &.ross {
+        padding: 0;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
       }
     }
   }

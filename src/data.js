@@ -53,23 +53,40 @@ function font (id) {
 function background () {
   let timestamp = new Date().getTime()
   let bgimg = `url(https://source.unsplash.com/random?sig=${timestamp})`
+
+  // Si c'est le premier appel, imageUrl est vide
+  if (!imageUrl) {
+    let bis = `url(https://source.unsplash.com/random?sig=${timestamp}wololo)`
+    preloadDiv.style['background-image'] = bis
+    imageUrl = bis
+    return { 'background-image': bgimg }
+  }
+
+  // Si on arrive là, c'est que c'est pas le premier appel
+  let url = imageUrl
   preloadDiv.style['background-image'] = bgimg
-  let res = { 'background-image': imageUrl }
   imageUrl = bgimg
-  return res
+  return { 'background-image': url }
 }
 
 function bgross () {
   let timestamp = new Date().getTime()
   let bgimg = `url(https://source.unsplash.com/random?$mountains&sig=${timestamp})`
-  rossDiv.style['background-image'] = bgimg
-  let res = { 'background-image': rossurl || bgimg }
-  rossurl = bgimg
-  return res
-}
 
-background()
-bgross()
+  // Si c'est le premier appel, imageUrl est vide
+  if (!rossurl) {
+    let bis = `url(https://source.unsplash.com/random?$mountains&sig=${timestamp}wololo)`
+    rossDiv.style['background-image'] = bis
+    rossurl = bis
+    return { 'background-image': bgimg }
+  }
+
+  // Si on arrive là, c'est que c'est pas le premier appel
+  let url = rossurl
+  rossDiv.style['background-image'] = bgimg
+  rossurl = bgimg
+  return { 'background-image': url }
+}
 
 export default {
   city: () => randomFromTable(cities),

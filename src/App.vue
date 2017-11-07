@@ -53,6 +53,7 @@ $menusize: 80px;
   left: 0;
   transition: 0.5s;
   transition-timing-function: ease-in-out;
+  box-shadow: 0 19px 38px rgba(0,0,0,.3),0 15px 12px rgba(0,0,0,.22);
 
   &.show {
     top: $menusize;

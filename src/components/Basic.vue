@@ -1,9 +1,7 @@
 <template lang="html">
   <div class="basic" v-bind:class="mode" v-bind:style="style">
 
-    <div class="row">
-      <div class="loadimage" v-bind:style="preloadStyle"></div>
-    </div>
+    <div class="row"></div>
 
     <div class="">
       <div class="col"></div>
@@ -22,6 +20,8 @@
 
 <script>
 import data from '../data.js'
+import { EV } from '@/events'
+
 data.font()
 
 export default {
@@ -33,11 +33,15 @@ export default {
       activity: data.activity(),
       adjective: data.adjective(),
       year: data.year(10, 1),
-      style: data.background(),
-      preloadStyle: data.background('sel')
+      style: data.background()
     }
   },
-
+  created () {
+    EV.on('fresh', this.again)
+  },
+  beforeDestroy () {
+    EV.removeListener('fresh', this.again)
+  },
   methods: {
     again () {
       data.font()
@@ -46,14 +50,17 @@ export default {
       this.activity = data.activity()
       this.adjective = data.adjective()
       this.year = data.year(10, 1)
-      this.style = this.preloadStyle
-      this.preloadStyle = data.background()
+      this.style = data.background()
     }
+  },
+
+  watch: {
+    '$route': () => { console.log('bonsooooooooooooooooooooooooooir') }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .basic {
 

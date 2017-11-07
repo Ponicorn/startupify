@@ -3,6 +3,9 @@ import activities from './data/activities.json'
 import adjectives from './data/adjectives.json'
 import fonts from './data/fonts.json'
 
+const preloadDiv = document.getElementById('bgpreload')
+let imageUrl = ''
+
 /**
  * Retourne une entré au hasard d'un tableau
  * Ou exacte si renseigne et existe
@@ -38,10 +41,22 @@ function font (id) {
   return rngFont
 }
 
+/**
+ * Charge une image random depuis unsplash
+ * L'image chargé est mis a "preload" dans une div hidden,
+ * et on retourne l'url de l'image dans le preload actuel
+ * Noïce :^)
+ */
 function background (sel) {
   let timestamp = new Date().getTime()
-  return { 'background-image': `url(https://source.unsplash.com/random?sig=${timestamp}${sel})` }
+  let bgimg = `url(https://source.unsplash.com/random?sig=${timestamp}${sel})`
+  preloadDiv.style['background-image'] = bgimg
+  let res = { 'background-image': imageUrl }
+  imageUrl = bgimg
+  return res
 }
+
+background()
 
 export default {
   city: () => randomFromTable(cities),

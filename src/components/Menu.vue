@@ -155,7 +155,9 @@ $menusize: 80px;
       box-sizing: border-box;
       color: inherit;
       text-decoration: none;
-
+      &:first-child {
+        margin-left: 0;
+      }
       &.basic {
         background: #2c2c2c;
         color: #eeeeee;

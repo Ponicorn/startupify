@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import EV from '@/event'
 
 export default {
   name: 'app',
@@ -35,6 +36,9 @@ export default {
   methods: {
     refresh () {
       if (this.spinning) return
+
+      // Dispatching event
+      EV.emit('refresh')
 
       // Animation
       this.spinning = true

@@ -16,6 +16,15 @@
       </div>
     </div>
 
+    <div class="navigation">
+      <router-link to="/" tag="div" class="navitem home" src="./assets/bobross.gif">
+        <div>Basic</div>
+      </router-link>
+      <router-link to="/bobross" tag="div" class="navitem" src="./assets/bobross.gif">
+        <img alt="Vue logo" src="./assets/bobross.gif">
+      </router-link>
+    </div>
+
     <!-- Stop propagaiton to isolate wrapper from other things -->
     <div id="wrapper" @click.stop>
       <router-view/>
@@ -30,7 +39,7 @@ export default {
   name: 'app',
   data () {
     return {
-      showmenu: false,
+      showmenu: true,
       spinning: false
     }
   },
@@ -142,6 +151,40 @@ html, body {
   .menu .cube>div{
     top: 10px;
     left: 10px;
+  }
+}
+
+.navigation {
+  position: fixed;
+  display: flex;
+  left: 70px;
+  top: 0px;
+
+  .navitem {
+    height: 60px;
+    width:  60px;
+    margin: 10px;
+    cursor: pointer;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    &.home {
+      background: #1f1f1f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      &>div {
+        width: 40px;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 12px;
+        color: #eee;
+        border: 1px solid #eee;
+      }
+    }
   }
 }
 

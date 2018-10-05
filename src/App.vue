@@ -1,7 +1,7 @@
 <template>
-  <div id="app" :class="{ showmenu }">
+  <div id="app" :class="{ showmenu }" @click.stop="showmenu = !showmenu">
 
-    <div class="cubewrap menu">
+    <div class="cubewrap menu"  @click.stop>
       <div class="cube" @click="showmenu = !showmenu">
         <div class="cube0"></div>
         <div class="cube1"></div>
@@ -10,13 +10,14 @@
       </div>
     </div>
 
-    <div class="cubewrap refresh">
+    <div class="cubewrap refresh" @click.stop>
       <div class="cube" @click="refresh">
         <div :class="{ spinning }"></div>
       </div>
     </div>
 
-    <div id="wrapper">
+    <!-- Stop propagaiton to isolate wrapper from other things -->
+    <div id="wrapper" @click.stop>
       <router-view/>
     </div>
   </div>

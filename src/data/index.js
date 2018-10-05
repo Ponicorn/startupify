@@ -2,10 +2,13 @@ import fonts from '@/data/fonts.json'
 import activities from '@/data/activities.json'
 import adjectives from '@/data/adjectives.json'
 import cities from '@/data/cities.json'
+import bobrossquotes from '@/data/bobrossquotes.json'
 
 let preloadDiv = document.querySelector('#preload')
+let bobDiv = document.querySelector('#bobpreload')
 let fontelement = document.querySelector('#badPractice')
 let imageUrl = 'url(https://source.unsplash.com/random)'
+let mountainUrl = 'url(https://source.unsplash.com/random?$mountains)'
 
 // Does it really need to be commented ?
 function randomFromTable (table, pos) {
@@ -36,6 +39,15 @@ function background () {
   return { 'background-image': loadedimg }
 }
 
+function mountains () {
+  // using timestamp for unique url, so we don't get cached
+  let timestamp = new Date().getTime()
+  let mtnimg = `url(https://source.unsplash.com/random?$mountains&sig=${timestamp})`
+  let loadedmountains = mountainUrl
+  bobDiv.style['background-image'] = mountainUrl = mtnimg
+  return { 'background-image': loadedmountains }
+}
+
 // Get a random year, from min 0 year before to max 6 year before
 function year (max = 6, min = 0) {
   // When we are retarded, swap value so anyway it's ok
@@ -58,8 +70,10 @@ function name () {
 }
 
 export default {
+  bobrossquotes: () => randomFromTable(bobrossquotes),
   font,
   background,
+  mountains,
   name,
   year
 }

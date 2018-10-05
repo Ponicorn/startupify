@@ -31,7 +31,6 @@ export default {
     this.background = data.background()
     this.startupname = data.name()
     this.year = data.year()
-    console.log(this.background)
     EV.on('refresh', this.refresh)
   },
   beforeDestroy () {
@@ -43,7 +42,6 @@ export default {
       this.background = data.background()
       this.startupname = data.name()
       this.year = data.year()
-      console.log(this.background)
     }
   }
 }
@@ -51,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
   .startup {
-    color: aliceblue;
+    color: rgba(255,255,255,0.75);
     text-align: center;
     height: 100%;
     width: 100%;

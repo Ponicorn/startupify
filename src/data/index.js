@@ -21,7 +21,6 @@ function randomFromTable (table, pos) {
 function font (id) {
   const rngFont = randomFromTable(fonts, id)
   fontelement.innerHTML = `@import url('${rngFont.url}'); .fontastique { font-family: ${rngFont.family};}`
-  console.log(document.querySelector('#badPractice'))
   return rngFont
 }
 
